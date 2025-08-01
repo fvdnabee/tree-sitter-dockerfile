@@ -73,7 +73,7 @@ jobs:
       - name: Build Wasm binaries
         run: |-
           while read -r grammar; do
-            npm x -- tree-sitter build --wasm "${grammar%/grammar.js}"
+            npm x -- tree-sitter build-wasm "${grammar%/grammar.js}"
           done < <(find . -name grammar.js -not -path './node_modules/*')
       - name: Upload binaries
         uses: actions/upload-artifact@v4
