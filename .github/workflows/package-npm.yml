@@ -156,7 +156,11 @@ jobs:
       - name: Move Wasm binaries to root
         continue-on-error: true
         run: mv -v prebuilds/*.wasm .
-      - name: Publish to npm
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+      - name: Create package tarball
+        run: npm pack
+      - name: Upload package tarball
+        uses: actions/upload-artifact@v4
+        with:
+          path: tree-sitter-dockerfile-*.tgz
+          name: package-tarball
+          retention-days: 2
