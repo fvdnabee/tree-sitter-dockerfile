@@ -31,10 +31,10 @@ on:
         description: The tree-sitter ABI version
         default: "15"
         type: string
-    secrets:
-      NODE_AUTH_TOKEN:
-        description: An authentication token for npm
-        required: true
+    # secrets:
+    #   NODE_AUTH_TOKEN:
+    #     description: An authentication token for npm
+    #     required: true
 
 defaults:
   run:
