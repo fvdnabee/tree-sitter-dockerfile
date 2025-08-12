@@ -135,7 +135,7 @@ jobs:
     runs-on: ubuntu-${{inputs.ubuntu-version}}
     environment:
       name: ${{inputs.environment-name}}
-      url: https://www.npmjs.com/package/${{inputs.package-name}}
+      # url: https://www.npmjs.com/package/${{inputs.package-name}}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
