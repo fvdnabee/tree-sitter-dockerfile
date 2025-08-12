@@ -1,4 +1,4 @@
-name: Publish package (npm)
+name: Package tarball (npm)
 
 on:
   workflow_call:
@@ -130,7 +130,7 @@ jobs:
           retention-days: 2
 
   package:
-    name: Publish NodeJS package
+    name: Package tarball npm
     needs: [build_wasm, build_node]
     runs-on: ubuntu-${{inputs.ubuntu-version}}
     environment:
